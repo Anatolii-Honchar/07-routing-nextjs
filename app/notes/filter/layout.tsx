@@ -1,4 +1,4 @@
-export default function NotesLayout({
+export default function FilterLayout({
   children,
   sidebar,
 }: {
@@ -7,8 +7,9 @@ export default function NotesLayout({
 }) {
   return (
     <div style={{ display: "flex", gap: "24px" }}>
-      <aside style={{ width: "200px" }}>{sidebar}</aside>
-      <main style={{ flex: 1 }}>{children}</main>
+      <aside style={{ width: "220px" }}>{sidebar}</aside>
+
+      <div style={{ flex: 1 }}>{children}</div>
     </div>
   );
 }
