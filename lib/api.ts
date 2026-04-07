@@ -26,19 +26,18 @@ interface CreateNotePayload {
 export const fetchNotes = async (
   page: number,
   search: string,
-  tag?: string,
 ): Promise<FetchNotesResponse> => {
-  const response = await api.get("/notes", {
+  const response = await api.get<FetchNotesResponse>("/notes", {
     params: {
       page,
       perPage: 12,
       ...(search && { search }),
-      ...(tag && tag !== "all" && { tag }),
     },
   });
 
   return response.data;
 };
+
 // 🔹 Створення нотатки
 export const createNote = async (payload: CreateNotePayload): Promise<Note> => {
   const response = await api.post<Note>("/notes", payload);
