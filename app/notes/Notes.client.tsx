@@ -14,9 +14,13 @@ import NoteForm from "@/components/NoteForm/NoteForm";
 
 import css from "@/components/NotesPage/NotesPage.module.css";
 
-export default function NotesClient() {
+export default function NotesClient({
+  initialTag = "",
+}: {
+  initialTag?: string;
+}) {
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(initialTag);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const debouncedSearch = useDebouncedCallback((value: string) => {
