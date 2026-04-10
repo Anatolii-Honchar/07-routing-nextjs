@@ -1,6 +1,7 @@
 import css from "./Footer.module.css";
+import Link from "next/link";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className={css.footer}>
       <div className={css.content}>
@@ -9,12 +10,12 @@ function Footer() {
           <p>Developer: your name</p>
           <p>
             Contact us:
-            <a href="mailto:student@notehub.app">student@notehub.app</a>
+            <Link href="mailto:student@notehub.app">student@notehub.app</Link>
           </p>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
